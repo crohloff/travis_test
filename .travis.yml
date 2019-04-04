@@ -15,11 +15,11 @@ before_install:
   
 install:
   - $SH "chmod +x test.sh"
-  - $SH "cd /opt/workspace/"
+#  - $SH "cd /opt/workspace/"
   - $SH "ls -l "
   
   
 
 script:
-  - $SH "test.sh build"
+  - $SH "/test.sh build"
  #  - docker run --rm -v $(pwd):/opt/workspace/ travis-test /opt/workspace/test.sh build
