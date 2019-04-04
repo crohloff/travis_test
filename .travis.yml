@@ -9,7 +9,7 @@ env: SH="docker exec -t travis-test-image bash -c"
 
 before_install:
   - docker build -t travis-test .
-  - docker run -t -d --rm -v $(pwd):/ --name travis-test-image travis-test
+  - docker run -t -d --rm -v $(pwd):/~ --name travis-test-image travis-test
  # - docker run -d --name travis-test-image travis-test
   - docker ps -a
   
