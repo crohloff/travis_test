@@ -16,6 +16,8 @@ before_install:
 install:
   - $SH "chmod +x /opt/workspace/test.sh"
   - $SH "cd /opt/workspace/"
+  - $SH "ls -l"
+  
   
 
 script:
