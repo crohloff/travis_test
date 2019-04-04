@@ -8,7 +8,8 @@ env: SH="docker exec -t travis-test-image bash -c"
 before_install:
   - docker build -t travis-test .
   - docker run -d --name travis-test-image travis-test
-  - docker ps
+  - sleep 15
+  - docker ps -a
 
 script:
   - $SH "/test.sh build"
