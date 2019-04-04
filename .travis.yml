@@ -5,14 +5,14 @@ language: c
 services:
   - docker
   
-#env: SH="docker exec -t travis-test-image bash -c"
+env: SH="docker exec -t travis-test-image bash -c"
 
 before_install:
-  - docker build -t travis-test .
- # - docker run -d --name travis-test-image travis-test
-#  - docker ps -a
+#  - docker build -t travis-test .
+  - docker run -t -d --name travis-test-image travis-test
+  - docker ps -a
 
 script:
- # - $SH "/test.sh build"
-   - docker run --rm -v $(pwd):/opt/workspace/ travis-test /opt/workspace/test.sh build
+  - $SH "/test.sh build"
+ #  - docker run --rm -v $(pwd):/opt/workspace/ travis-test /opt/workspace/test.sh build
 
