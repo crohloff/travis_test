@@ -2,11 +2,13 @@ language: c
 
 services:
   - docker
+  
+env: SH="docker exec -t travis-test bash -c"
 
 before_install:
-  - docker build -t travis_test_image .
-  - docker run -d travis_test_image
-  - docker ps -a
+  - docker build -t travis-test .
+  - docker run -d travis-test
+  - docker ps
 
 script:
-  - docker exec travis_test_image /test.sh build
+  - $SH "/test.sh build"
