@@ -12,6 +12,9 @@ before_install:
   - docker run -t -d --rm -v $(pwd):/opt/workspace/ --name travis-test-image travis-test
  # - docker run -d --name travis-test-image travis-test
   - docker ps -a
+  
+install:
+  - $SH "chmod +x /opt/workspace/test.sh"
 
 script:
   - $SH "/opt/workspace/test.sh build"
