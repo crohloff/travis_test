@@ -9,17 +9,17 @@ env: SH="docker exec -t travis-test-image bash -c"
 
 before_install:
   - docker build -t travis-test .
-  - docker run -t -d --rm -v $(pwd):/~ --name travis-test-image travis-test
+  - docker run -t -d --rm -v $(pwd):/opt/workspace/ --name travis-test-image travis-test
  # - docker run -d --name travis-test-image travis-test
   - docker ps -a
   
 install:
-  - $SH "chmod +x test.sh"
-  #- $SH "cd /opt/workspace/"
-  - $SH "ls -l"
+  - $SH "chmod +x /opt/workspace/test.sh"
+  - $SH "cd /opt/workspace/"
+  - $SH "ls -l /opt/workspace/"
   
   
 
 script:
-  - $SH "test.sh build"
+  - $SH "/opt/workspace/test.sh build"
  #  - docker run --rm -v $(pwd):/opt/workspace/ travis-test /opt/workspace/test.sh build
