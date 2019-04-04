@@ -20,4 +20,4 @@ install:
 
 script:
   - $SH "/opt/workspace/test.sh build"
-  - $SH "/opt/workspace/hello"
+  - $SH "/opt/workspace/build/hello"
