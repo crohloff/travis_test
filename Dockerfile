@@ -16,5 +16,3 @@ RUN rm -rf /tmp/yay
 
 # install AUR deps
 RUN sudo -u builduser yay -S --noconfirm lcov-git
-
-RUN ["chmod", "+x", "opt/workspace/test.sh"]
