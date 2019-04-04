@@ -3,11 +3,11 @@ language: c
 services:
   - docker
   
-env: SH="docker exec -t travis-test bash -c"
+env: SH="docker exec -t travis-test-image bash -c"
 
 before_install:
   - docker build -t travis-test .
-  - docker run -d travis-test
+  - docker run -d --name travis-test-image travis-test
   - docker ps
 
 script:
