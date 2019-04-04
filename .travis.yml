@@ -1,0 +1,12 @@
+language: c
+
+services:
+  - docker
+
+before_install:
+  - docker build -t travis_test_image .
+  - docker run -d travis_test_image
+  - docker ps -a
+
+script:
+  - docker exec travis_test_image /test.sh build
