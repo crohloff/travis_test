@@ -16,8 +16,7 @@ build() {
 
 test() {
     cd build
-    make test ARGS="-V"
-    make test_coverage
+    make tests
 }
 
 "$1"
